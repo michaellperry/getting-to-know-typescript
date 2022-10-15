@@ -19,8 +19,19 @@ function checkIn(reservation: Reservation) {
     }
 }
 
-checkIn({
-    beds: "single",
-    name: "Jones Family",
-    guests: 2
-});
+class CoupleReservation {
+    givenName: string;
+    beds = "single" as const;
+    guests = 2;
+
+    get name() {
+        return `${this.givenName} Family`;
+    }
+
+    constructor(givenName: string) {
+        this.givenName = givenName;
+    }
+}
+
+
+checkIn(new CoupleReservation("Jones"));
