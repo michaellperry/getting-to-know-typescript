@@ -1,11 +1,11 @@
-interface Party {
+interface Reservation {
     name: string;
     guests: number;
 }
 
-function checkIn(party: Party) {
-    console.log(`The party ${party.name} has checked in.`);
-    console.log(`They have ${party.guests} guests.`);
+function checkIn(reservation: Reservation) {
+    console.log(`The party ${reservation.name} has checked in.`);
+    console.log(`They have ${reservation.guests} guests.`);
 }
 
 checkIn({
